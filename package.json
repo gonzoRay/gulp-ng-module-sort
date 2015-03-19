@@ -1,0 +1,20 @@
+{
+  "name": "gulp-ng-module-sort",
+  "version": "1.0.0",
+  "description": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://hs1itscm01:7990/scm/en/gulp-ng-module-sort.git"
+  },
+  "keywords": [
+    "gulp",
+    "sort",
+    "angular"
+  ],
+  "author": "Reagan Cooper",
+  "license": "MIT"
+}

@@ -178,7 +178,7 @@ $RECYCLE.BIN/
 # Node Package Manager 
 /node_modules
 
-# Ewok (App specific)
+# App specific
 /script-watcher
 /compiled
 /dist
