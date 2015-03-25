@@ -15,7 +15,8 @@ module.exports = function(options) {
     return __through.obj(onFile, onEnd);
 
     function onFile(file, enc, cb) {
-        var absolutePath = file.path
+        //TODO: Add Gulp error handling. Throw proper gulp stream errors.
+        var absolutePath = file.path;
         var ext = __path.extname(absolutePath);
         switch (ext) {
             case options.fileType:

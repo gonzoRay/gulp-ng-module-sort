@@ -179,8 +179,6 @@ $RECYCLE.BIN/
 /node_modules
 
 # App specific
-/script-watcher
-/compiled
 /dist
 
 
