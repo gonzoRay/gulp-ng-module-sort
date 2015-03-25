@@ -2,11 +2,11 @@ INFORMATION
 -------------------
 <table>
 <tr>
-<td>Package</td><td>gulp-concat</td>
+<td>Package</td><td>gulp-ng-module-sort</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Concatenates files</td>
+<td>Sorts AngularJS files in a given directory(s) in preparation for script concatenation.</td>
 </tr>
 <tr>
 <td>Node Version</td>
@@ -23,7 +23,7 @@ USAGE
 ```js
 	var ngModuleSort = require('gulp-ng-module-sort');
 
-	gulp.task('scripts', function() {
+	gulp.task('angular-scripts', function() {
 		return gulp.src('./lib/*.js')
 		.pipe(ngModuleSort())
 		.pipe(concat('scripts.js))
