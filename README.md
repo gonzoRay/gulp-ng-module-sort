@@ -32,3 +32,17 @@ USAGE
 
 ```
 
+CONVENTION
+-------------------
+
+Assumes this directory convention:
+
+Directory structure:
+```
+|--- src/
+|   |--- app/
+|       |--- module/
+|           |--- sub-module/
+|               |--- sub-module.js
+|           |--- module.js
+```
