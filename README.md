@@ -38,16 +38,16 @@ CONVENTION
 Assumes this directory structure convention:
 
 ```
-|--- src/
-|   |--- app/
-|       |--- module1/
-|           |--- sub-module1/
-|               |--- sub-module1.js
-|           |--- module1.js
-|       |--- module2/
-|           |--- sub-module2/
-|               |--- sub-module2.js
-|           |--- sub-module3/
-|               |--- sub-module3.js
-|           |--- module2.js
+|——— src/
+|   |——— app/
+|       |——— module1/
+|           |——— sub-module1/
+|               |——— sub-module1.js
+|           |——— module1.js
+|       |——— module2/
+|           |——— sub-module2/
+|               |——— sub-module2.js
+|           |——— sub-module3/
+|               |——— sub-module3.js
+|           |——— module2.js
 ```
