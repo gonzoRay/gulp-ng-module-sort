@@ -53,4 +53,4 @@ Assumes this directory structure convention:
 |   |——— app.js
 ```
 
-Where app.js
+Where `app.js` is the root Angular module used in `ng-app`.
