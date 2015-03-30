@@ -50,4 +50,7 @@ Assumes this directory structure convention:
 |           |——— sub-module3/
 |               |——— sub-module3.js
 |           |——— module2.js
+|   |——— app.js
 ```
+
+Where app.js
