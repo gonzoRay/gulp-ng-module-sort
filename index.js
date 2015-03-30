@@ -1,7 +1,12 @@
-var __path = require('path');
-var __through = require('through2');
+'use strict';
+const PLUGIN_NAME = 'gulp-ng-module-sort';
 
-module.exports = function(options) {
+var __path = require('path'),
+    __through = require('through2'),
+    __gutil = require('gulp-util'),
+    __PluginError = __gutil.PluginError;
+
+function gulpNgModuleSort(options) {
     options = options || {};
 
     if(!!options) {
@@ -15,19 +20,30 @@ module.exports = function(options) {
     return __through.obj(onFile, onEnd);
 
     function onFile(file, enc, cb) {
-        //TODO: Add Gulp error handling. Throw proper gulp stream errors.
+        if(!file) {
+            this.emit('error', new __PluginError(PLUGIN_NAME, 'Error reading file stream'));
+            return cb();
+        }
+
         var absolutePath = file.path;
         var ext = __path.extname(absolutePath);
-        switch (ext) {
-            case options.fileType:
+        if(ext === options.fileType) {
                 var baseFilename = __path.basename(absolutePath, ext).toLowerCase()
                 var parentDirectory = __path.dirname(absolutePath).split('\\').slice(-1)[0];
+
+                if(!parentDirectory || parentDirectory.length < 1) {
+                    var message = 'Parent directory not detected. Matching: fileType: ' + options.fileType;
+                    this.emit('error', new __PluginError(PLUGIN_NAME, message), {
+                        fileName: file.path
+                    });
+                    return cb();
+                }
+
                 if(baseFilename.toLowerCase() === parentDirectory.toLowerCase()) {
                     moduleFiles.push(file);
                 } else {
                     otherFiles.push(file);
                 }
-                break;
         }
         cb();
     }
@@ -40,3 +56,5 @@ module.exports = function(options) {
         cb();
     }
 };
+
+module.exports = gulpNgModuleSort;
