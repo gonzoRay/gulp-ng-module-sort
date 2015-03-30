@@ -40,12 +40,14 @@ Assumes this directory structure convention:
 ```
 |--- src/
 |   |--- app/
-|       |--- foo-module/
-|           |--- sub-module-foo/
-|               |--- sub-module-foo.js
-|           |--- foo-module.js
-|       |--- bar-module/
-|           |--- sub-module-bar/
-|               |--- sub-module-bar.js
-|           |--- bar-module.js
+|       |--- module1/
+|           |--- sub-module1/
+|               |--- sub-module1.js
+|           |--- module1.js
+|       |--- module2/
+|           |--- sub-module2/
+|               |--- sub-module2.js
+|           |--- sub-module3/
+|               |--- sub-module3.js
+|           |--- module2.js
 ```
