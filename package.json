@@ -13,7 +13,9 @@
   "keywords": [
     "gulp",
     "sort",
-    "angular"
+    "angular",
+    "module",
+    "gulpplugin"
   ],
   "author": "Reagan Cooper",
   "license": "MIT"

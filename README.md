@@ -24,7 +24,7 @@ USAGE
 	var ngModuleSort = require('gulp-ng-module-sort');
 
 	gulp.task('angular-scripts', function() {
-		return gulp.src('./lib/*.js')
+		return gulp.src('./src/app/**/*.js')
 		.pipe(ngModuleSort())
 		.pipe(concat('scripts.js))
 		.pipe(gulp.dest('./dist/));
@@ -35,14 +35,17 @@ USAGE
 CONVENTION
 -------------------
 
-Assumes this directory convention:
+Assumes this directory structure convention:
 
-Directory structure:
 ```
 |--- src/
 |   |--- app/
-|       |--- module/
-|           |--- sub-module/
-|               |--- sub-module.js
-|           |--- module.js
+|       |--- foo-module/
+|           |--- sub-module-foo/
+|               |--- sub-module-foo.js
+|           |--- foo-module.js
+|       |--- bar-module/
+|           |--- sub-module-bar/
+|               |--- sub-module-bar.js
+|           |--- bar-module.js
 ```
