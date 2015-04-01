@@ -22,12 +22,13 @@ USAGE
 ------------------
 ```js
 	var ngModuleSort = require('gulp-ng-module-sort');
+    var concat = require('gulp-concat');
 
 	gulp.task('angular-scripts', function() {
 		return gulp.src('./src/app/**/*.js')
-		.pipe(ngModuleSort())
-		.pipe(concat('scripts.js))
-		.pipe(gulp.dest('./dist/));
+		    .pipe(ngModuleSort())
+		    .pipe(concat('angularAppScripts.js))
+		    .pipe(gulp.dest('./dist/));
 	});
 
 ```
