@@ -1,10 +1,10 @@
 'use strict';
 const PLUGIN_NAME = 'gulp-ng-module-sort';
 
-var __path = require('path'),
-    __through = require('through2'),
-    __gutil = require('gulp-util'),
-    __PluginError = __gutil.PluginError;
+var pathUtil = require('path'),
+    through = require('through2'),
+    gulpUtil = require('gulp-util'),
+    PluginError = gulpUtil.PluginError;
 
 function gulpNgModuleSort(options) {
     options = options || {};
@@ -17,23 +17,23 @@ function gulpNgModuleSort(options) {
     var otherFiles = [];
     var sortedFiles = [];
 
-    return __through.obj(onFile, onEnd);
+    return through.obj(onFile, onEnd);
 
     function onFile(file, enc, cb) {
         if(!file) {
-            this.emit('error', new __PluginError(PLUGIN_NAME, 'Error reading file stream'));
+            this.emit('error', new PluginError(PLUGIN_NAME, 'Error reading file stream'));
             return cb();
         }
 
         var absolutePath = file.path;
-        var ext = __path.extname(absolutePath);
+        var ext = pathUtil.extname(absolutePath);
         if(ext === options.fileType) {
-                var baseFilename = __path.basename(absolutePath, ext).toLowerCase()
-                var parentDirectory = __path.dirname(absolutePath).split('\\').slice(-1)[0];
+                var baseFilename = pathUtil.basename(absolutePath, ext).toLowerCase()
+                var parentDirectory = pathUtil.dirname(absolutePath).split('\\').slice(-1)[0];
 
                 if(!parentDirectory || parentDirectory.length < 1) {
                     var message = 'Parent directory not detected. Matching: fileType: ' + options.fileType;
-                    this.emit('error', new __PluginError(PLUGIN_NAME, message), {
+                    this.emit('error', new PluginError(PLUGIN_NAME, message), {
                         fileName: file.path
                     });
                     return cb();
