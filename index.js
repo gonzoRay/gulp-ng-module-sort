@@ -1,5 +1,5 @@
 'use strict';
-const PLUGIN_NAME = 'gulp-ng-module-sort';
+var PLUGIN_NAME = 'gulp-ng-module-sort';
 
 var pathUtil = require('path'),
     through = require('through2'),
