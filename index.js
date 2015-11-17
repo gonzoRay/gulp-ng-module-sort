@@ -4,6 +4,7 @@ var PLUGIN_NAME = 'gulp-ng-module-sort';
 var pathUtil = require('path'),
     through = require('through2'),
     gulpUtil = require('gulp-util'),
+    path = require('path'),
     PluginError = gulpUtil.PluginError;
 
 function gulpNgModuleSort(options) {
@@ -29,7 +30,7 @@ function gulpNgModuleSort(options) {
         var ext = pathUtil.extname(absolutePath);
         if(ext === options.fileType) {
                 var baseFilename = pathUtil.basename(absolutePath, ext).toLowerCase()
-                var parentDirectory = pathUtil.dirname(absolutePath).split('\\').slice(-1)[0];
+                var parentDirectory = pathUtil.dirname(absolutePath).split(path.sep).slice(-1)[0];
 
                 if(!parentDirectory || parentDirectory.length < 1) {
                     var message = 'Parent directory not detected. Matching: fileType: ' + options.fileType;
