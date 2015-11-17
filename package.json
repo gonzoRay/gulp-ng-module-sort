@@ -1,6 +1,6 @@
 {
   "name": "gulp-ng-module-sort",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Sort Angular modules above their dependencies based on the convention: module/module.js folder structure.",
   "main": "index.js",
   "scripts": {
