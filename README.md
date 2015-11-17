@@ -28,7 +28,7 @@ USAGE
 		return gulp.src('./src/app/**/*.js')
 		    .pipe(ngModuleSort())
 		    .pipe(concat('angularAppScripts.js'))
-		    .pipe(gulp.dest('./dist/));
+		    .pipe(gulp.dest('./dist/'));
 	});
 
 ```
